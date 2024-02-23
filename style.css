@@ -1,0 +1,107 @@
+.main {
+    display: flex;
+    height: 100vh;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 400px;
+    background: radial-gradient(rgb(252, 180, 48), white, green);
+    justify-content: center;
+    align-items: center;
+
+
+
+}
+
+.line {
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    width: 8px;
+    background-color: white;
+    transform: rotate(90deg);
+    border-radius: 15px;
+    cursor: pointer;
+    animation-duration: 0.3s;
+    animation-delay: 0.25s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+.one {
+    position: absolute;
+    z-index: 0;
+    transform: rotate(90deg) translateX(-25px);
+    animation-name: move;
+}
+
+.two {
+    position: relative;
+    z-index: 0;
+    animation-name: check;
+
+}
+
+.three {
+    position: absolute;
+    z-index: 1;
+    transform: rotate(90deg) translateX(25px);
+    animation-name: mov;
+
+}
+
+
+@keyframes move {
+    0% {
+        transform: rotate(90deg) translateX(-25px);
+    }
+
+    50% {
+        transform: rotate(90deg) translateX(0px);
+    }
+
+    100% {
+        transform: rotate(135deg) translateX(0px);
+    }
+}
+
+@keyframes check {
+    0% {
+        transform: scale(1) rotate(90deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1) rotate(90deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(0) rotate(90deg);
+        opacity: 0;
+    }
+
+}
+
+
+
+@keyframes mov {
+    0% {
+        transform: rotate(90deg) translateX(25px);
+    }
+
+    50% {
+        transform: rotate(90deg) translateX(0px);
+    }
+
+    100% {
+        transform: rotate(45deg) translateX(0px);
+    }
+
+}
